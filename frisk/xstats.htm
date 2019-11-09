@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>diagram</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="icon" href="../img/flavicon.png" type="img/vnd.microsoft.icon" />
+
+
+<script>
+	var inputFil=["datum", "namn", "klocka", "langd", "aktivitet","2018-02-09","Allan","12:30","15 min","pingis","2018-02-09","Linus","16:00","60min","promenad","2018-02-10","Markus","12:40","30min","massage","2018-02-10","hÃ¥kan","15:00","10min","promenad","2018-02-12","laila","13:30","30min","promenad","2018-02-14","Markus","13:30","15min","massage","2018-02-15","Katarina","11:30","30min","promenad","2018-02-15","fredrika","16:30","30min","promenad","2018-02-16","Jasmine","12:30","30min","gym","2018-02-16","Nermin","10:30","30min","promenad","2018-02-16","Malloh","15:00","20min","massage","2018-02-16","Andrei","12:30","30min","promenad","2018-02-16","Adam","12:30","30min","promenad","2018-02-16","Markus","13:30","30min","massage","2018-02-16","Eva","14:00","15min","promenad","2018-02-16","Linus","15:30","30min","pingis","2018-02-16","william","15:30","30min","pingis","2018-02-17","SaraD","11:00","30min","massage","2018-02-17","Markus","12:00","30min","massage","2018-02-17","Elliot","13:30","30min","massage","2018-02-17","Jarmila","17:00","15min","massage","2018-02-18","hÃ¥kan","11:15","25min","massage","2018-02-18","BjÃ¶rn","12:55","30min","promenad","2018-02-18","BjÃ¶rn","12:55","20min","promenad","2018-02-20","RadaD","11:30","15min","promenad","2018-02-20","Linus","15:30","30min","promenad","2018-02-21","Adam","08:40","15min","promenad","2018-02-21","BjÃ¶rn","08:40","15min","promenad","2018-02-21","martin","11:45","15min","promenad","2018-02-21","Adam","12:40","15min","promenad","2018-02-21","Ylva","13:15","30min","promenad","2018-02-21","william","15:30","30min","promenad","2018-02-22","Aleks","13:00","30min","massage","2018-02-22","Jarmila","15:40","15min","massage","2018-02-22","hÃ¥kan","18:00","20min","massage","2018-02-23","laila","13:00","30min","promenad","2018-02-23","Jasmine","15:30","30min","promenad","2018-02-23","Allan","14:30","20min","pingis","2018-02-23","Fredrik","13:00","15min","promenad","2018-02-25","fredrika","14:30","30min","promenad","2018-02-26","Klara","12:45","15min","promenad","2018-02-26","Adam","12:45","15min","promenad","2018-02-26","Klara","12:00","10min","promenad","2018-02-26","Adam","12:00","10min","promenad","2018-02-26","BjÃ¶rn","13:40","10min","promenad"];
+	
+//["datum", "namn", "klocka", "langd", "aktivitet","2018-03-01","Richard","13:00","15min","promenad","2018-03-02","Jasmine","16:00","30min","promenad","2018-03-02","william","13:45","30min","promenad","2018-03-02","Ylva","13:45","30min","promenad","2018-03-02","william","13:45","30min","promenad","2018-03-02","hÃ¥kan","17:00","30min","promenad","2018-03-03","HÃ¥kan","10:20","20min","promenad","2018-03-05","laila","14:00","30min","promenad","2018-03-05","BjÃ¶rn","11:30","30min","promenad","2018-03-05","martin","15:30","15min","promenad","2018-03-05","annab","15:45","30min","promenad","2018-03-05","Linus","17:00","30min","pingis","2018-03-05","pingis","17:00","30min","pingis","2018-03-07","martin","11:35","15min","promenad","2018-03-07","Adam","11:35","15min","promenad","2018-03-07","Adam","11:35","15min","promenad","2018-03-07","Malloh","14:30","20min","Ã¶vrigt","2018-03-07","Ylva","14:30","30min","promenad","2018-03-07","Markus","18:00","30min","promenad","2018-03-08","HÃ¥kan","11:50","30min","promenad","2018-03-08","Adam","12:30","15min","promenad","2018-03-08","Mikael","12:30","30min","promenad","2018-03-09","william","15:00","30min","promenad","2018-03-10","Susan","11:00","30min","promenad","2018-03-11","Malloh","13:00","10min","Ã¶vrigt","2018-03-11","RadaD","13:15","30min","promenad","2018-03-11","fredrika","14:00","30min","Ã¶vrigt","2018-03-12","Aleks","10:45","15min","Ã¶vrigt","2018-03-12","william","13:00","30min","promenad","2018-03-12","Ylva","13:00","30min","promenad","2018-03-12","BjÃ¶rn","14:00","30min","promenad","2018-03-12","RadaD","15:45","15min","promenad","2018-03-13","viktor","14:00","30min","pingis","2018-03-13","Linus","14:00","30min","pingis","2018-03-13","Allan","14:00","15min","pingis","2018-03-13","Allan","14:00","15min","avboka","2018-03-13","Malloh","14:30","30min","Ã¶vrigt","2018-03-14","Richard","16:30","15min","promenad","2018-03-15","Elliot","13:15","15min","promenad","2018-03-15","RadaD","15:00","15min","massage","2018-03-15","Stefanie","12:30","15min","promenad","2018-03-15","Stefanie","12:30","15min","promenad","2018-03-16","Jasmine","14:00","30min","promenad","2018-03-16","annab","14:00","30min","promenad","2018-03-16","annab","14:00","30min","promenad","2018-03-16","Sofia","15:15","15min","promenad","2018-03-16","Stefanie","15:15","15min","promenad","2018-03-16","Stefanie","15:15","15min","promenad","2018-03-16","Stefanie","15:15","15min","promenad","2018-03-17","Jarmila","13:45","15min","promenad","2018-03-18","Adam","12:30","30min","promenad","2018-03-18","SaraD","10:15","30min","promenad","2018-03-19","BjÃ¶rn","09:40","30min","promenad","2018-03-19","susan","12:30","30min","promenad","2018-03-19","fredrika","15:30","30min","promenad","2018-03-20","fredrika","15:30","30min","promenad","2018-03-20","william","16:30","30min","promenad","2018-03-20","Ylva","16:30","30min","promenad","2018-03-21","Adam","11:00","15min","promenad","2018-03-21","viktor","13:30","30min","pingis","2018-03-21","Linus","13:30","30min","pingis","2018-03-23","Malloh","14:00","20min","massage","2018-03-23","martin","13:15","15min","promenad","2018-03-23","Adam","13:15","15min","promenad","2018-03-23","Marie","15:00","20min","massage","2018-03-23","martin","13:15","15min","promenad","2018-03-24","CONNY","12:00","30min","Ã¶vrigt","2018-03-25","Malloh","12:45","10min","Ã¶vrigt","2018-03-27","BjÃ¶rn","14:00","20min","promenad","2018-03-28","BJjÃ¶rn","10:20","10min","pingis","2018-03-28","ViktorJ","10:20","10min","pingis","2018-03-28","RIchard","13:00","30min","promenad","2018-03-28","Helene","12:30","20min","promenad","2018-03-28","katarina","13:00","30min","promenad","2018-03-28","fredrika","13:45","30min","promenad","2018-03-28","Sara","14:00","20min","massage","2018-03-28","Marie","15:30","20min","massage","2018-03-29","Adam","08:30","15min","promenad","2018-03-29","Adam","11:45","15min","promenad","2018-03-29","Stefanie","11:30","15min","promenad","2018-03-29","Stefanie","11:30","15min","promenad","2018-03-29","Stefanie","11:30","15min","promenad","2018-03-29","Stefanie","11:30","15min","promenad","2018-03-29","Klara","14:10","30min","promenad","2018-03-29","viktor","14:15","30min","pingis","2018-03-29","Linus","14:15","30min","pingis","2018-03-29","RadaD","15:00","20min","massage"]
+
+</script>
+
+<script src="../js/js.js"></script>
+<script src="../js/diagramDrawer/stapel.js"></script>
+
+  
+</head>
+
+<body>
+
+
+
+
+
+<script>
+/*
+var canvas = document.getElementById("canvasDatum");
+var diagram = canvas.getContext("2d");
+
+diagram.fillStyle="#F1211F";
+diagram.font = "10px Arial";
+
+hoppY=nollY-x*enhetSteg;
+*/
+/*
+	diagram.beginPath();
+	diagram.moveTo(10,nollY);
+	diagram.lineTo(790,nollY);
+	diagram.stroke();
+	diagram.strokeStyle="#dddddd";*/
+	/*
+
+for (x=0;x<20;x++){
+	diagram.strokeStyle="#eeeeee";
+	if (x%5==0){ diagram.strokeStyle="#bbbbbb";}
+	if (x==0){diagram.strokeStyle="#000000";}
+	hoppY=nollY-x*enhetSteg;
+	diagram.beginPath();
+	diagram.moveTo(10,hoppY);
+	diagram.lineTo(790,hoppY);
+	diagram.stroke();
+}
+
+*/
+
+
+var space=Math.floor(760/31);
+
+for(a=1;a<32;a++){
+
+	  console.log(space);
+   // diagram.fillText(a,(space*a),290); 
+
+   // diagram.fillText(10,10,50);
+}
+
+
+//canvasDatum.width=500;
+
+//datum
+//vad
+//vem
+//kön
+//längd
+
+
+//let stapel1 = new Stapel(10,10,10,10,true);
+//let stapel2 = new Stapel(25,10,10,20,false);
+
+
+
+  //var canvasDatum = document.getElementById("canvasDatum");
+  
+    
+   
+
+//stapel1.draw();
+//stapel2.draw();
+//countStapel(5);
+var canvasYta=[];
+countStats();
+ 
+canvasYta.push(new CanvasYta("test")); 
+
+canvasYta[0].makeCanvas();
+ canvasYta.push(new CanvasYta("test2")); 
+ canvasYta.push(new CanvasYta("aktivitet")); 
+//canvasYta = new CanvasYta("test2"); 
+canvasYta[1].makeCanvas();
+canvasYta[2].makeCanvas();
+canvasYta[0].skrivNummer("test");
+canvasYta[1].skrivNummer("test");
+canvasYta[2].skrivNummer("aktivitet");
+
+drawStaplar2();
+drawStaplar();
+</script>
+
+
+</body>
+</html>

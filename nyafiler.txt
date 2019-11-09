@@ -1,0 +1,32 @@
+tl
+----------------------------------------
+css/style.css
+frisk/frisk.php
+frisk/stats.php
+js/js
+js/adm?
+json/frisk/statestikHistory.txt från start
+json/frisk.txt från start
+php/funx.php
+php/makeExcel
+php/sparaTillFil
+admStart.php
+index
+admPlanera?
+adm?
+
+
+bc
+---------------------------------
+
+
+nya
+-----------------------
+json/frisk/statestikHistory
+js/diagramDrawer/grafdrawer
+frisk/stats.php
+
+ändrade
+-------------------------
+php/sparaTillFil.php
+admStart.php

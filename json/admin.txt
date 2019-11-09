@@ -1,0 +1,1 @@
+{"fil":"json/sch/default.txt","datum":"vardag"},{"fil":"json/sch/default.txt","datum":"lordag"},{"fil":"json/sch/default.txt","datum":"sondag"},{"fil":"json/sch/tl.txt","datum":"2016-Aug-07"}

@@ -1,0 +1,1 @@
+{"namn":"dag","inTable":"json/sch/lorda.txt"}

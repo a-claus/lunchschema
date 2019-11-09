@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.content{
+	float:left;
+	
+	}
+
+
+table{
+	
+float:left;
+	}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,input{
+	
+	width: 100px;}
+	
+.terminaler{
+	background-color:#FFC;
+	
+	}
+
+.lunch{
+	
+	background-color:#CFF;}
+th{
+	
+	background-color:#333;
+	color:#FFF;
+	
+	}
+.lunchrad {
+		
+		height:56px;}
+		
+.termrad {
+		
+		height:25px;}
+		
+.flyta{
+	float:left;}
+#tid{
+	display:inline;}
+.red{
+	color:#F60}
+	
