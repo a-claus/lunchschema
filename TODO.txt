@@ -1,6 +1,14 @@
 TODO
 --------------------------------------------
 
+7. Måste organisera filerna bättre.
+
+6. 191109 När ngn klicka på inaktuellt schema och tar bort, verkar det generera krasch. js.js 49.13
+	- Borde byta namn på tabellen.
+	- Lista på rutrornas namn behövs.
+
+5. 191109 Oktober scheman fungerar inte. Gissar att jag missar med 0 och 10 i php - fil. 
+
 1. Skapa nytt formulär, med staplar för klockslag
 ------------------------------------
 Varje rad består av en, img. Den blir längre för varje person som bokar tid. Gör ingen skillnad på om det är terminal eller lunch som bokas. JSON registrerar tid och längd.

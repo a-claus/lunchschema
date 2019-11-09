@@ -6,6 +6,7 @@ var minut =15;
 var Ltimme = 8;
 var Lminut =0;
 var lista="";
+var aktivaRutor = [];
 
 
 
@@ -42,74 +43,65 @@ function fyll(){
 	oki=false;
 	
 	for (a=1; a<schemaJS.length;a++){
-		
-		if (schemaJS[a].inTable!="frisk"){
-		
-		if (schemaJS[a].namn.length==0){
-			document.getElementById(schemaJS[a].inTable).value=schemaJS[a].namn;
-			
+		if (schemaJS[a].inTable != "frisk"){
+		//if(){}	
+			if (schemaJS[a].namn.length == 0){ 
+				document.getElementById(schemaJS[a].inTable).value=schemaJS[a].namn;
 			}
-		else if (kontrollNamn(schemaJS[a].inTable,schemaJS[a].namn)==false){
-					if (a==(schemaJS.length-1) && person==schemaJS[a].namn){
-						alert(schemaJS[a].namn + " , du har en namne på förvaltningen, som vill ha rast samtidigt som dig. Ändra på ditt namn eller ändra tid!");
-					}
-		}
-	else
-		{
-		if (document.getElementById(schemaJS[a].inTable).value.length==0){
-			//lägger info i fil ruta
-			
-				{document.getElementById(schemaJS[a].inTable).value=schemaJS[a].namn;
-				document.getElementById(schemaJS[a].inTable).style.backgroundColor="e0ffff";
-				schemaJS[a].namn;
-				oki=true;}
-		}
-				
-		else{
-			//Om inte rutan fil tstar vi att lägga i nästa ruta
-			aa=schemaJS[a].inTable.slice(0,1);
-			bb=schemaJS[a].inTable.slice(1,3);
-			cc=schemaJS[a].inTable.slice(4,6);
-			oki=false;
-			//alert(aa + bb +"_" + cc);
-			//if (aa=="L"){antal=15;}else{antal=12;}
-			antal=parseInt(countCells(aa, bb-10))+10; //cc; Problemet är att detta är inte den inf vi vill ha
-			
-			 for(b=10; b<antal;b++) {
-				 
-				nyplats=aa+bb+"_"+b;
-				
-				if (document.getElementById(nyplats).value.length==0){
-					document.getElementById(nyplats).value=schemaJS[a].namn;
-					b=antal;
-					oki=true;}
+			else if (kontrollNamn(schemaJS[a].inTable,schemaJS[a].namn)==false){
+				if (a==(schemaJS.length-1) && person==schemaJS[a].namn){
+					alert(schemaJS[a].namn + " , du har en namne på förvaltningen, som vill ha rast samtidigt som dig. Ändra på ditt namn eller ändra tid!");
 				}
-		
-			
-				if (oki==false && a==schemaJS.length-1) //Sista posten i listan inte bidde ngt
-				{if (person!=0)
-				 {alert("Planet hälsar att någon varit snabbare än dig!");}}
-				
-			}//IF ELSE
-		
-			
-		}
+			}
+			else
+				{
+				if (document.getElementById(schemaJS[a].inTable).value.length==0){
+					//lägger info i fil ruta
+					document.getElementById(schemaJS[a].inTable).value=schemaJS[a].namn;
+					document.getElementById(schemaJS[a].inTable).style.backgroundColor="e0ffff";
+					schemaJS[a].namn;
+					oki=true;
+				}
+				else{
+					//Om inte rutan fil tstar vi att lägga i nästa ruta
+					aa=schemaJS[a].inTable.slice(0,1);
+					bb=schemaJS[a].inTable.slice(1,3);
+					cc=schemaJS[a].inTable.slice(4,6);
+					oki=false;
+					//alert(aa + bb +"_" + cc);
+					//if (aa=="L"){antal=15;}else{antal=12;}
+					antal=parseInt(countCells(aa, bb-10))+10; //cc; Problemet är att detta är inte den inf vi vill ha
+					for(b=10; b<antal;b++) {
+				 		nyplats=aa+bb+"_"+b;
+						if (document.getElementById(nyplats).value.length==0){
+							document.getElementById(nyplats).value=schemaJS[a].namn;
+							b=antal;
+							oki=true;
+						}
+					}
+					if (oki==false && a==schemaJS.length-1) {//Sista posten i listan inte bidde ngt
+						if (person!=0){
+							 alert("Planet hälsar att någon varit snabbare än dig!");
+						}
+					}
+				}
+			}
 				
 			if (oki==true && person == schemaJS[a].namn){
 					mataLista(schemaJS[a].inTable);
-					document.getElementById(schemaJS[a].inTable).style.backgroundColor="#E0EEE0";
-				
-				}
+					document.getElementById(schemaJS[a].inTable).style.backgroundColor="#E0EEE0";	
+			}
 			oki=false;	
 		}
 		else
 		{
 			//document.getElementById("kontrollruta").innerHTML=document.getElementById("kontrollruta").innerHTML+"\n"+"   kl" + schemaJS[a].klocka;
 			fyll_friskvard(schemaJS[a].klocka,schemaJS[a].langd, schemaJS[a].aktivitet, schemaJS[a].namn, radF);
-			radF++;}
+			radF++;
+		}
 	}//For
 	dinatider();
-	}//Fun
+}//Fun
 		
 function countCells(table, where){
 				c=table+where;		
@@ -139,17 +131,20 @@ function drawTerminal()
 				minut=0;
 				timme++;}
 		if (q==0){string="<tr class=\"termrad\"><th scope=\"row\">"+ timme + minT +"</th>"
-			}	else
-	{	string=string+"<tr class=\"termrad\"><th scope=\"row\" id=\"T"+q+"_00"+"\">"+ timme + minT +"</th>";}
+			}	
+		else
+			{	
+				string=string+"<tr class=\"termrad\"><th scope=\"row\" id=\"T"+q+"_00"+"\">"+ timme + minT +"</th>";}
 				c="T"+q;		
 				nuff=tabell[0][c];
-			for (p=0;p<nuff;p++){ 	
-			
-	a=p+10;
-	b=q+10;		
-				string=string+" <td><input type=\"text\" onclick=\"nameInput(this.id)\" id=\"T"+b+"_"+a+"\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";}
-			
-			string=string+"</tr>";}
+					for (p=0;p<nuff;p++){ 	
+						a=p+10;
+						b=q+10;		
+						string=string+" <td><input type=\"text\" onclick=\"nameInput(this.id)\" id=\"T"+b+"_"+a+"\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";
+						aktivaRutor.push("T" + b + a);
+					}
+					string=string+"</tr>";
+				}
 	
 
 document.write(string);
@@ -198,7 +193,9 @@ Lstring=Lstring+"<tr class=\"lunchrad\"><th scope=\"row\" id=\"L"+q+"_00"+"\">"+
 for (p=0;p<nuff;p++){ 	
 	a=p+10;
 	b=q+10;
-Lstring=Lstring+"<td><input type=\"text\" id=\"L"+b+"_"+a+"\"  onclick=\"nameInput(this.id)\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";}
+	Lstring=Lstring+"<td><input type=\"text\" id=\"L"+b+"_"+a+"\"  onclick=\"nameInput(this.id)\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";
+	aktivaRutor.push("T" + b + a);
+}
 Lstring=Lstring+"</tr>";
 		}
 //document.writeln(string);		
