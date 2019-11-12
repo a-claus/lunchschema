@@ -41,7 +41,7 @@ function idDecoder(cellId){
 function fyll(){
 	var radF=0;
 	oki=false;
-	
+	//console.log(aktivaRutor);
 	for (a=1; a<schemaJS.length;a++){
 		if (schemaJS[a].inTable != "frisk"){
 			if (aktivaRutor.indexOf(schemaJS[a].inTable) != -1){	
@@ -94,7 +94,9 @@ function fyll(){
 				oki=false;	
 			}
 			else{
-				alert("Detta fält du försökte boka på, existerar inte idag. Gör nytt försök.");
+				if (a+1 == schemaJS.length){
+					alert("Detta fält du försökte boka på, existerar inte idag. Gör nytt försök.");
+				}
 			}
 		}
 		else //(frisk)
@@ -146,7 +148,7 @@ function drawTerminal()
 						a=p+10;
 						b=q+10;		
 						string=string+" <td><input type=\"text\" onclick=\"nameInput(this.id)\" id=\"T"+b+"_"+a+"\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";
-						aktivaRutor.push("T" + b + a);
+						aktivaRutor.push("T" + b + "_" + a);
 					}
 					string=string+"</tr>";
 				}
@@ -199,7 +201,7 @@ for (p=0;p<nuff;p++){
 	a=p+10;
 	b=q+10;
 	Lstring=Lstring+"<td><input type=\"text\" id=\"L"+b+"_"+a+"\"  onclick=\"nameInput(this.id)\" onkeydown=\"if (event.keyCode == 13) bock(id)\"></td>";
-	aktivaRutor.push("T" + b + a);
+	aktivaRutor.push("L" + b + "_" + a);
 }
 Lstring=Lstring+"</tr>";
 		}
