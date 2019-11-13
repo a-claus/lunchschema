@@ -10,6 +10,7 @@ TODO
 	6b- Lista på rutrornas namn behövs.
 
 5. 191109 Oktober scheman fungerar inte. Gissar att jag missar med 0 och 10 i php - fil. 
+Det skulel också vara för att jag har svenska förkortningar. 
 
 1. Skapa nytt formulär, med staplar för klockslag
 ------------------------------------
