@@ -5,7 +5,7 @@
 <title>Rastschema</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" href="img/flavicon.png" type="img/vnd.microsoft.icon" />
-<script src="js/js.js"></script>
+<script src="js/js.js?v2"></script>
 
 <script type="text/javascript">
 var person=0;</script>
@@ -34,7 +34,7 @@ include("php/makeExcel_se.php");
 }
 
 
-$dateCheck =date("Y-m-d",filectime("json/schema.txt"));
+$dateCheck =date("Y-m-d",filectime("json/schema.txt")); // tar fram filens senaste datum
 
 if ($dateCheck!=$GLdatum)
 	{
@@ -215,6 +215,6 @@ echo '<a href="adm.php"><INPUT TYPE="button" value="ADM"></a>'; ?>
   
 </p>
 <p>&nbsp;</p>
-<p><em>version 4c jan 2018</em></p>
+<p><em>version 4d nov 2019</em></p>
 </body>
 </html>

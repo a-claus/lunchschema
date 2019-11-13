@@ -113,7 +113,7 @@ include("admStart.php"); ?>
         <option value="Jul">Juli</option>
          <option value="Aug">August</option>
           <option value="Sep">September</option>
-           <option value="Okt">Oktober</option>
+           <option value="Oct">Oktober</option>
             <option value="Nov">November</option> 
             <option value="Dec">December</option>
 </select>
